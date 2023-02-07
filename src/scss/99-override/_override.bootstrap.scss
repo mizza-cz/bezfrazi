@@ -1,0 +1,31 @@
+/*! purgecss start ignore */
+.btn.btn-dark {
+  background-color: var(--color-dark);
+  border-color: var(--color-dark);
+  color: var(--color-light);
+  &:hover {
+    background-color: var(--color-light);
+    color: var(--color-dark);
+  }
+}
+.btn {
+  height: 3rem;
+  border-radius: 12px;
+  width: 100%;
+  font-size: 16px;
+  line-height: 18px;
+  font-family: "Helvetica Bold";
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d9d9d9;
+  padding-top: 12px;
+  &:hover {
+    background-color: var(--color-dark);
+    color: var(--color-light);
+  }
+}
+/*! purgecss end ignore */

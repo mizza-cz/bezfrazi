@@ -1,0 +1,181 @@
+.header {
+  background-color: var(--color-dark);
+  @include media-breakpoint-down(lg) {
+    .container {
+      padding: 0;
+    }
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    position: relative;
+    z-index: 999;
+    @include media-breakpoint-down(lg) {
+      padding: 28px;
+    }
+  }
+  &__logo {
+    width: 10.3rem;
+    height: 3.8128rem;
+    display: block;
+    transition: all 0.3s;
+    @include media-breakpoint-down(md) {
+      width: 8rem;
+      height: 3.2rem;
+    }
+    &:hover {
+      opacity: 0.7;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    @include media-breakpoint-down(lg) {
+      position: absolute;
+      top: 6rem;
+      right: 0;
+      z-index: 99;
+      width: 100%;
+      padding: 1rem 0;
+      opacity: 0;
+      visibility: hidden;
+      flex-direction: column;
+      -webkit-box-shadow: -1px 0px 34px -1px rgba(0, 0, 0, 0.11);
+      -moz-box-shadow: -1px 0px 34px -1px rgba(0, 0, 0, 0.11);
+      box-shadow: -1px 0px 34px -1px rgba(0, 0, 0, 0.11);
+      transition: opacity 0.3s, visibility 0.3s;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+      padding-right: 16px;
+      background-color: var(--color-dark);
+    }
+    @include media-breakpoint-down(md) {
+      top: 5.4rem;
+    }
+    li + li {
+      padding-left: 60px;
+      @include media-breakpoint-down(lg) {
+        padding-left: 0;
+      }
+    }
+    li {
+      padding-top: 4px;
+      @include media-breakpoint-down(lg) {
+        padding-bottom: 12px;
+        padding-top: 8px;
+      }
+      a {
+        font-size: 23px;
+        letter-spacing: 1.25px;
+        font-family: "Helvetica Bold";
+        font-weight: 700;
+        color: var(--color-light);
+        line-height: 1.2;
+        text-decoration-color: transparent;
+        transition: all 0.3s;
+        padding-left: 32px;
+        position: relative;
+        &:hover {
+          opacity: 0.7;
+        }
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 21px;
+          height: 18px;
+          background-image: url("../images/content/decore.png");
+        }
+      }
+    }
+  }
+}
+.c-header__opener {
+  padding: 0.25rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 0.0625rem solid transparent;
+  border-radius: 0.25rem;
+  transition: box-shadow 0.15s ease-in-out;
+  display: flex;
+  align-items: center;
+  position: relative;
+  color: var(--color-light);
+  text-transform: uppercase;
+  margin-left: auto;
+  margin-right: 8px;
+  font-family: "Helvetica Bold";
+  font-weight: 700;
+  @include media-breakpoint-down(sm) {
+    padding: 0.25rem 0;
+    font-size: 0;
+  }
+  span {
+    transition: all 0.3s;
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(255, 103, 47, 0.2);
+    display: block;
+    margin-left: 16px;
+    &::before,
+    &::after {
+      transition: all 0.3s;
+      content: "";
+      position: absolute;
+      width: 24px;
+      height: 3px;
+      background: #fff;
+      left: 0;
+      right: 0;
+      box-shadow: 0 2px 5px rgba(255, 103, 47, 0.2);
+    }
+    &::before {
+      transform: translateY(-7px);
+    }
+    &::after {
+      transform: translateY(7px);
+    }
+  }
+  &:focus {
+    box-shadow: none;
+  }
+  @include media-breakpoint-only(lg) {
+    display: none;
+  }
+  @include media-breakpoint-only(xl) {
+    display: none;
+  }
+  @include media-breakpoint-only(xxl) {
+    display: none;
+  }
+}
+.is-nav-open .header .header__links {
+  @include media-breakpoint-down(lg) {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0s;
+  }
+}
+.c-header__opener.is-open {
+  span {
+    border-color: var(--color-dark);
+    background: var(--color-dark);
+  }
+  span:before {
+    transform: rotate(45deg);
+  }
+  span:after {
+    transform: rotate(-45deg);
+  }
+}

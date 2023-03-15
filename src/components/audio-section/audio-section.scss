@@ -41,7 +41,11 @@
   .h2 {
     padding-left: 42px;
     position: relative;
-
+    font-size: 28px;
+    line-height: 120%;
+    @include media-breakpoint-down(lg) {
+      font-size: 24px;
+    }
     &::before {
       content: "";
       position: absolute;

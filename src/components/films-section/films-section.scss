@@ -16,9 +16,13 @@
   }
 }
 .film {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   .btn {
     max-width: 190px;
     margin: 0 auto;
+    margin-top: auto;
   }
   p {
     margin-bottom: 32px;
@@ -41,6 +45,10 @@
   .h2 {
     padding-left: 42px;
     position: relative;
+    font-size: 28px;
+    @include media-breakpoint-down(lg) {
+      font-size: 24px;
+    }
     &::before {
       content: "";
       position: absolute;
@@ -50,7 +58,7 @@
       background-repeat: no-repeat;
       width: 28px;
       height: 26px;
-      top: 4px;
+      top: 0px;
     }
   }
 }

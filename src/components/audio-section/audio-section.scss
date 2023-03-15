@@ -41,6 +41,7 @@
   .h2 {
     padding-left: 42px;
     position: relative;
+
     &::before {
       content: "";
       position: absolute;
@@ -51,6 +52,9 @@
       width: 28px;
       height: 26px;
       top: 4px;
+      @include media-breakpoint-down(lg) {
+        top: 0;
+      }
     }
   }
 }

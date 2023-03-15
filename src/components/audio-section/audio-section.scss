@@ -16,9 +16,14 @@
 }
 
 .audio {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   .btn {
     max-width: 190px;
     margin: 0 auto;
+    text-transform: uppercase;
+    margin-top: auto;
   }
   p {
     margin-bottom: 32px;
